@@ -1,7 +1,7 @@
 import requests
 import json
 
-def query_newsdata_api(API_KEY = "YOUR_API_KEY", params = None, verbose=False, ):
+def query_newsdata_api(API_KEY = "YOUR_API_KEY", params = None, verbose=False):
     # Define the API endpoint (e.g., for news articles)
     BASE_URL = "https://newsdata.com/api/1/news"
 
