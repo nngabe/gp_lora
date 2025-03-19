@@ -9,8 +9,8 @@ where $f((\mathbf{x},\mathbf{z}))$ is a deep GP conditioned on a context embeddi
 
 ## How to Use This Repository
 
-0. First install the requirements: `pip install -r requirements.txt`
-1. Collect text from the newsdata API by running `python grab_news_text.py`. The text retrieved can be filtered by country, category, or language with the params argument.
-2. Preprocess and filter raw text data using `python fineweb-2-pipeline.py --dataset="path/to/your/dataset"`
-3. Finetune with  `python qlora.py --dataset="path/to/your/dataset"`
-4. Train deep GP with  `python dgp.py`
+1. First install the requirements: ```pip install -r requirements.txt```
+2. Collect text from the newsdata API by running ```python grab_news_text.py```. The text retrieved can be filtered by country, category, or language with the params argument.
+3. Preprocess and filter raw text data using ```python fineweb-2-pipeline.py --dataset="path/to/your/dataset"```
+4. Finetune with  ```python qlora.py --dataset="path/to/your/dataset"```
+5. Train deep GP with  ```python dgp.py```
