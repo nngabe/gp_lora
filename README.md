@@ -1,7 +1,9 @@
 # QLoRA Deep Gaussian Processes 
 This repository contains code for training deep gaussian processes for VaR prediction conditioned on LLM embeddings, i.e. LLaMa-2 finetuned using QLoRA. Finetuning data is retrieved using the newsdata API.  
 
-Value at Risk (VaR) is calculated based on a user-specified risk level $\alpha$ ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[1]](https://arxiv.org/pdf/2105.06126) 
+Value at Risk (VaR) is optimized based on a portfolio
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;f=\sum_iw_if_i" title="\Large f=\sum_iw_if_i" />
+a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[1]](https://arxiv.org/pdf/2105.06126) 
 
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;V_{\alpha}(\mathbf{x},\mathbf{z})=\textrm{inf}\{\omega:P(f(\mathbf{x},\mathbf{z})\leq\omega)\geq\alpha\}" title="\Large V_{\alpha}(\mathbf{x},\mathbf{z})=\textrm{inf}\{\omega:P(f((\mathbf{x},\mathbf{z}))\leq\omega)\geq\alpha\}" />
