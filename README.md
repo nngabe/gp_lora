@@ -7,7 +7,7 @@ Value at Risk (VaR) is optimized based on a portfolio with weights <img src="htt
 
 where the kernel <img src="https://latex.codecogs.com/svg.image?\large&space;&space;K" /> has a deep kernel representation
 
-<img src="https://latex.codecogs.com/svg.image?\large&space;&space;\begin{matrix}k=\textrm{exp}(-\frac{1}{2}||x_i-x_j||/l^2)\\k_{ij}=k(\hat{x}_i,\hat{x}_j)\end{matrix}" />
+<img src="https://latex.codecogs.com/svg.image?\large&space;&space;\begin{matrix}k(x_i,x_j)=\textrm{exp}(-\frac{1}{2}||x_i-x_j||/l^2)\\k_{ij}=k(\hat{x}_i,\hat{x}_j)\end{matrix}" />
 
 a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[1]](https://arxiv.org/pdf/2105.06126) 
 
