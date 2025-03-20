@@ -3,7 +3,8 @@ This repository contains code for training deep gaussian processes for VaR predi
 
 Value at Risk (VaR) is optimized based on a portfolio
 
-<img src="https://latex.codecogs.com/svg.image?\LARGE&space;\begin{matrix}f=\sum_iw_if_i\\f_i\sim\textrm{GP}(\mu_i,K)\end{matrix}" title="\Large f=\sum_iw_if_i" />
+<img src="https://latex.codecogs.com/svg.image?\LARGE&space;\begin{matrix}f=\sum_iw_if_i\\f_i\sim\textrm{GP}(\mu_i,K)\end{matrix}" />
+
 a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[1]](https://arxiv.org/pdf/2105.06126) 
 
 
