@@ -1,6 +1,8 @@
 # QLoRA Deep Gaussian Processes 
 This repository contains code for training deep gaussian processes for VaR prediction conditioned on LLM embeddings, i.e. LLaMa-2 finetuned using QLoRA. Finetuning data is retrieved using the newsdata API.  Combining finetuned LLMs and deep GPs is a good choice when:
+
 (1) There is reasonably large and up to date corpus for training and generating up-to-date embeddings;
+
 (2) The number of assets under consideration is relatively small, i.e. <img src="https://latex.codecogs.com/svg.image?\large&space;&space;n<100" />.
 
 Value at Risk (VaR) is optimized based on a portfolio with weights <img src="https://latex.codecogs.com/svg.image?\large&space;&space;w_i" /> and assets <img src="https://latex.codecogs.com/svg.image?\large&space;&space;f_i" /> represented as deep gaussian processes:
