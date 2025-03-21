@@ -7,7 +7,7 @@ This repository contains code for training deep gaussian processes for VaR predi
 
 ## Background
 
-Value at Risk (VaR) is optimized based on a portfolio with weights <img src="https://latex.codecogs.com/svg.image?\large&space;&space;w_i" /> and assets <img src="https://latex.codecogs.com/svg.image?\large&space;&space;f_i" /> represented as deep gaussian processes:
+Value at Risk (VaR) is a statistical measure that estimates the maximum potential loss an investment portfolio might experience, within a defined timeframe and confidence level, assuming stationary market conditions. VaR can be optimized based on a portfolio with weights <img src="https://latex.codecogs.com/svg.image?\large&space;&space;w_i" /> and assets <img src="https://latex.codecogs.com/svg.image?\large&space;&space;f_i" /> represented as deep gaussian processes:
 
 <img src="https://latex.codecogs.com/svg.image?\LARGE&space;\begin{matrix}f&=\sum_iw_if_i\\f_i&\sim\textrm{GP}(\mu_i,K)\end{matrix}" />
 
