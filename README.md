@@ -9,11 +9,11 @@ where the kernel <img src="https://latex.codecogs.com/svg.image?\large&space;&sp
 
 <img src="https://latex.codecogs.com/svg.image?\large&space;&space;\begin{matrix}K_{ij}=k(g(\mathbf{x}_i),g(\mathbf{x}_j))\end{matrix}" />
 
-where the kernel function is, e.g., an RBF kernel
+and the kernel function is, e.g., an RBF kernel
 
 <img src="https://latex.codecogs.com/svg.image?\large&space;&space;k(\mathbf{x}_i,\mathbf{x}_j)=\textrm{exp}\bigg(-\frac{1}{2}||\mathbf{x}_i-\mathbf{x}_j||/l^2\bigg)" />
 
-a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[2]](https://arxiv.org/pdf/2105.06126) 
+Since Gaussian Processes produce probabilistic outputs, we can evaluate the VaR based on a trained GP and a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[2]](https://arxiv.org/pdf/2105.06126) 
 
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;V_{\alpha}(\mathbf{x},\mathbf{z})=\textrm{inf}\{\omega:P(f(\mathbf{x},\mathbf{z})\leq\omega)\geq\alpha\}" title="\Large V_{\alpha}(\mathbf{x},\mathbf{z})=\textrm{inf}\{\omega:P(f((\mathbf{x},\mathbf{z}))\leq\omega)\geq\alpha\}" />
