@@ -9,9 +9,9 @@ where the kernel <img src="https://latex.codecogs.com/svg.image?\large&space;&sp
 
 <img src="https://latex.codecogs.com/svg.image?\large&space;&space;\begin{matrix}K_{ij}=k(g(\mathbf{x}_i),g(\mathbf{x}_j))\end{matrix}" />
 
-and the kernel is, e.g., an RBF kernel
+where the kernel function is, e.g., an RBF kernel
 
-<img src="https://latex.codecogs.com/svg.image?\large&space;&space;k(\mathbf{x}_i,\mathbf{x}_j)=\textrm{exp}(-\frac{1}{2}||\mathbf{x}_i-\mathbf{x}_j||/l^2)" />
+<img src="https://latex.codecogs.com/svg.image?\large&space;&space;k(\mathbf{x}_i,\mathbf{x}_j)=\textrm{exp}\bigg(-\frac{1}{2}||\mathbf{x}_i-\mathbf{x}_j||/l^2\bigg)" />
 
 a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[2]](https://arxiv.org/pdf/2105.06126) 
 
