@@ -3,7 +3,7 @@ This repository contains code for training deep gaussian processes for VaR predi
 
 (1) There is reasonably large and up to date corpus for training and generating up-to-date embeddings;
 
-(2) The number of assets under consideration is relatively small, i.e. <img src="https://latex.codecogs.com/svg.image?\large&space;&space;n<100" />.
+(2) The number of assets under consideration is relatively small, i.e. <img src="https://latex.codecogs.com/svg.image?\large&space;&space;N<100" />, since GP inference scales as <img src="https://latex.codecogs.com/svg.image?\large&space;&space;\mathcal{O}(N^3)" />
 
 ## Background
 
