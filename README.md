@@ -3,13 +3,13 @@ This repository contains code for training deep gaussian processes for VaR predi
 
 Value at Risk (VaR) is optimized based on a portfolio with weights <img src="https://latex.codecogs.com/svg.image?\large&space;&space;w_i" /> and assets <img src="https://latex.codecogs.com/svg.image?\large&space;&space;f_i" /> represented as deep gaussian processes:
 
-<img src="https://latex.codecogs.com/svg.image?\LARGE&space;\begin{matrix}f=&\sum_iw_if_i\\f_i\sim&\textrm{GP}(\mu_i,K)\end{matrix}" />
+<img src="https://latex.codecogs.com/svg.image?\LARGE&space;\begin{matrix}f&=\sum_iw_if_i\\f_i&\sim\textrm{GP}(\mu_i,K)\end{matrix}" />
 
-where the kernel <img src="https://latex.codecogs.com/svg.image?\large&space;&space;K" /> is parameterized by a neural network <img src="https://latex.codecogs.com/svg.image?\large&space;&space;g" />
+where the kernel <img src="https://latex.codecogs.com/svg.image?\large&space;&space;K" /> is parameterized by a neural network <img src="https://latex.codecogs.com/svg.image?\large&space;&space;g:\mathbb{R}^n\rightarrow\mathbb{R}^m" /> [[1]](https://arxiv.org/pdf/1511.02222)
 
-<img src="https://latex.codecogs.com/svg.image?\large&space;&space;\begin{matrix}k(\mathbf{x}_i,\mathbf{x}_j)&=\textrm{exp}(-\frac{1}{2}||\mathbf{x}_i-\mathbf{x}_j||/l^2)\\K_{ij}=k(g(\mathbf{x}_i),g(\mathbf{x}_j))\end{matrix}" />
+<img src="https://latex.codecogs.com/svg.image?\large&space;&space;\begin{matrix}k(\mathbf{x}_i,\mathbf{x}_j)&=\textrm{exp}(-\frac{1}{2}||\mathbf{x}_i-\mathbf{x}_j||/l^2)\\K_{ij}&=k(g(\mathbf{x}_i),g(\mathbf{x}_j))\end{matrix}" />
 
-a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[1]](https://arxiv.org/pdf/2105.06126) 
+a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[2]](https://arxiv.org/pdf/2105.06126) 
 
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;V_{\alpha}(\mathbf{x},\mathbf{z})=\textrm{inf}\{\omega:P(f(\mathbf{x},\mathbf{z})\leq\omega)\geq\alpha\}" title="\Large V_{\alpha}(\mathbf{x},\mathbf{z})=\textrm{inf}\{\omega:P(f((\mathbf{x},\mathbf{z}))\leq\omega)\geq\alpha\}" />
