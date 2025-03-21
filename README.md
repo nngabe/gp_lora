@@ -1,5 +1,7 @@
 # QLoRA Deep Gaussian Processes 
-This repository contains code for training deep gaussian processes for VaR prediction conditioned on LLM embeddings, i.e. LLaMa-2 finetuned using QLoRA. Finetuning data is retrieved using the newsdata API.  
+This repository contains code for training deep gaussian processes for VaR prediction conditioned on LLM embeddings, i.e. LLaMa-2 finetuned using QLoRA. Finetuning data is retrieved using the newsdata API.  Combining finetuned LLMs and deep GPs is a good choice when:
+(1) There is reasonably large and up to date corpus for training and generating up-to-date embeddings;
+(2) The number of assets under consideration is relatively small, i.e. <img src="https://latex.codecogs.com/svg.image?\large&space;&space;n<100" />.
 
 Value at Risk (VaR) is optimized based on a portfolio with weights <img src="https://latex.codecogs.com/svg.image?\large&space;&space;w_i" /> and assets <img src="https://latex.codecogs.com/svg.image?\large&space;&space;f_i" /> represented as deep gaussian processes:
 
@@ -11,9 +13,9 @@ where the kernel <img src="https://latex.codecogs.com/svg.image?\large&space;&sp
 
 and the kernel function is, e.g., an RBF kernel
 
-<img src="https://latex.codecogs.com/svg.image?\large&space;&space;k(\mathbf{x}_i,\mathbf{x}_j)=\textrm{exp}\Big(-\frac{1}{2}||\mathbf{x}_i-\mathbf{x}_j||/l^2\Big)" />
+<img src="https://latex.codecogs.com/svg.image?\large&space;&space;k(\mathbf{x}_i,\mathbf{x}_j)=\textrm{exp}\Big(-\frac{1}{2}||\mathbf{x}_i-\mathbf{x}_j||/l^2\Big)" />.
 
-Since Gaussian Processes produce probabilistic outputs, we can evaluate the VaR based on a trained GP and a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[2]](https://arxiv.org/pdf/2105.06126) 
+Since GPs produce probabilistic outputs, we can evaluate the VaR based on a trained GP and a user-specified risk level ($\alpha$ = 0 is risk-free, $\alpha$ = 1 is maximal risk) [[2]](https://arxiv.org/pdf/2105.06126) 
 
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;V_{\alpha}(\mathbf{x},\mathbf{z})=\textrm{inf}\{\omega:P(f(\mathbf{x},\mathbf{z})\leq\omega)\geq\alpha\}" title="\Large V_{\alpha}(\mathbf{x},\mathbf{z})=\textrm{inf}\{\omega:P(f((\mathbf{x},\mathbf{z}))\leq\omega)\geq\alpha\}" />
