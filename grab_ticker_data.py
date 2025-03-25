@@ -14,7 +14,7 @@ def get_yf_tickers(tickers, verbose=True, intraday=False, interval='5m'):
     if verbose:
         print(f'intraday start: t_i = {t_i} \nintraday stop: t_f = {t_f} (today)')
 
-    df_daily = pd.DataFrame(index=None)
+    df = pd.DataFrame(index=None)
 
     if intraday:
         for ticker in tickers:
@@ -32,11 +32,11 @@ def get_yf_tickers(tickers, verbose=True, intraday=False, interval='5m'):
             if ticker in list(df.columns):
                 continue
             data = yf.download(ticker, start='2023-01-01', end=t_f)
-            df_daily[ticker] = data['Close']
+            df[ticker] = data['Close']
 
-        df_daily = df_daily.dropna(axis=1)
+        df = df.dropna(axis=1)
         
-        return df_daily
+        return df
 
 if __name__ == '__main__':
 
@@ -46,4 +46,5 @@ if __name__ == '__main__':
            'AAPL', 'MSFT', 'GOOG', 'META', 'TSLA']
 
     df = get_yf_tickers(tickers)
-    df.to_pickle(os.getenv('QLORA_DGP_DATA_DIR'))
+    out_file = 'data/'+'tickers__' +str(datetime.date.today()).replace('-','_') + '__.pickle'
+    df.to_pickle(out_file)
