@@ -1,4 +1,4 @@
-# LoRA Deep Gaussian Processes 
+# LoRA conditioned Deep Gaussian Processes 
 This repository contains code for training deep gaussian processes for VaR prediction conditioned on LLM embeddings, i.e. LLaMa-2 finetuned using LoRA/QLoRA. Finetuning data is retrieved using the newsdata API.  Combining finetuned LLMs and deep GPs is a good choice when:
 
 (1) There is reasonably large and up to date corpus for training and generating up-to-date embeddings;
