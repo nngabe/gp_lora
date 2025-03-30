@@ -48,7 +48,7 @@ where $f(\mathbf{x},\mathbf{z})$ is a deep GP conditioned on a context embedding
    
 7. Finetune with
    ```
-   python qlora.py --dataset="path/to/your/dataset"
+   tune run lora_finetune_single_device --config ./8B_lora_newstext.yaml
    ```
    
 9. Train deep GP with
