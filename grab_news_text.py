@@ -1,15 +1,16 @@
 import requests
 import json
+import os
+import datetime
 
-def query_newsdata_api(API_KEY = "YOUR_API_KEY", params = None, verbose=False):
+def query_newsdata_api(API_KEY = "YOUR_API_KEY", params = None, verbose = False):
     # Define the API endpoint (e.g., for news articles)
-    BASE_URL = "https://newsdata.com/api/1/news"
+    BASE_URL = "https://newsdata.io/api/1/archive"
 
     # Define parameters for the API request (e.g., search query, language, etc.)
     if params == None:
         params = {
             "apikey": API_KEY,
-            "q": "technology",  # Example search query
             "language": "en"   # Example language
         }
 
@@ -33,7 +34,30 @@ def query_newsdata_api(API_KEY = "YOUR_API_KEY", params = None, verbose=False):
     
 if __name__ == '__main__':
 
-    # Replace with your actual API key
-    API_KEY = "XYZ"
-    data = query_newsdata_api(API_KEY)
+    API_KEY = os.environ['NEWSDATA_TOKEN']
+    to_date = str(datetime.date.today()-datetime.timedelta(days=1))
+    from_date = str(datetime.date.today()-datetime.timedelta(days=8))
+    queries = ["semiconductor","AI"]
+   
+    data = {}
+    for q in queries:
+        params = {
+                "apikey": API_KEY,
+                "q": q,
+                "language": "en",
+                "from_date": from_date,
+                "to_date": to_date,
+                 }
 
+        data[q] = query_newsdata_api(API_KEY,params=params)
+        json_file = 'data/'+'news_text__'+'q'+q +to_date[4:].replace('-','') + from_date[4:].replace('-','')+ '__.json'
+        txt_file = 'data/'+'news_text__'+'q'+q +to_date[4:].replace('-','') + from_date[4:].replace('-','')+ '__.txt'
+        with open(json_file, 'w') as file:
+            json.dump(data[q], file, indent=4)
+        
+        res = data[q]['results']
+        tostr = lambda s: s if type(s)==str else ""
+        content_list = [ tostr(r['content'])  for r in res]
+        content = '</s> <s>'.join(content_list)
+        with open(txt_file, "w") as text_file:
+            text_file.write(content)
