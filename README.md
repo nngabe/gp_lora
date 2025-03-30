@@ -13,9 +13,9 @@ Value at Risk (VaR) is a statistical measure that estimates the maximum potentia
 
 <img src="https://latex.codecogs.com/svg.image?\LARGE&space;\begin{matrix}f&=\sum_iw_if_i\\f_i&\sim\textrm{GP}(\mu_i,K)\end{matrix}" />
 
-where the kernel <img src="https://latex.codecogs.com/svg.image?\large&space;&space;K" /> is parameterized by a neural network <img src="https://latex.codecogs.com/svg.image?\large&space;&space;\phi:\mathbb{R}^n\rightarrow\mathbb{R}^m" /> [[1]](https://arxiv.org/pdf/1511.02222)
+where the kernel <img src="https://latex.codecogs.com/svg.image?\large&space;&space;K" /> is parameterized by a neural network <img src="http://latex.codecogs.com/svg.image?\large&space;&space;\phi:\mathbb{R}^n\rightarrow\mathbb{R}^m" /> [[1]](https://arxiv.org/pdf/1511.02222)
 
-<img src="https://latex.codecogs.com/svg.image?\large&space;&space;\begin{matrix}K_{ij}=k\big(\phi(\mathbf{x}_i),\phi(\mathbf{x}_j)\big)\end{matrix}" />
+<img src="http://latex.codecogs.com/svg.image?\large&space;&space;\begin{matrix}K_{ij}=k\big(\phi(\mathbf{x}_i),\phi(\mathbf{x}_j)\big)\end{matrix}" />
 
 and the kernel function is, e.g., an RBF kernel
 
